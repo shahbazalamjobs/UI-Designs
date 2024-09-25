@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Comparison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-7xl bg-gray-800 rounded-lg p-8 text-white space-y-8">
+        <!-- First Car Card -->
+        <div id="car-card-1" class="grid grid-cols-5 items-center cursor-pointer mb-8" onclick="toggleDropdown1()">
+            <!-- Car Image -->
+            <div class="col-span-1 flex items-center">
+                <img src="https://placehold.co/150x100" alt="Car Image" class="w-24 h-16">
+            </div>
+
+            <!-- Car Name and Type -->
+            <div class="col-span-1">
+                <p class="text-3xl font-semibold">Tesla Model 3</p>
+                <p class="text-lg text-gray-400">Electric | Automatic</p>
+            </div>
+
+            <!-- Price -->
+            <div class="col-span-1 text-center">
+                <p class="text-2xl font-semibold">₹40,00,000</p>
+                <p class="text-lg text-gray-400">Ex-showroom Price</p>
+            </div>
+
+            <!-- Mileage/Range -->
+            <div class="col-span-1 text-center">
+                <p class="text-2xl font-semibold">423 km</p>
+                <p class="text-lg text-gray-400">Range per Charge</p>
+            </div>
+
+            <!-- Arrow -->
+            <div class="col-span-1 flex justify-end">
+                <i id="arrow1" class="fas fa-chevron-down text-3xl"></i>
+            </div>
+        </div>
+
+        <!-- Dropdown Content for First Car -->
+        <div id="dropdown1" class="hidden bg-gray-700 mt-4 rounded-lg p-6">
+            <p class="text-lg font-semibold">Additional Specifications</p>
+            <ul class="mt-2 text-gray-300">
+                <li><span class="font-bold">Horsepower:</span> 283 hp</li>
+                <li><span class="font-bold">Top Speed:</span> 233 km/h</li>
+                <li><span class="font-bold">Charging Time:</span> 6-8 hours (Home Charger)</li>
+                <li><span class="font-bold">Safety Rating:</span> 5 stars</li>
+                <li><span class="font-bold">Boot Space:</span> 425 liters</li>
+            </ul>
+        </div>
+
+        <!-- Second Car Card -->
+        <div id="car-card-2" class="grid grid-cols-5 items-center cursor-pointer" onclick="toggleDropdown2()">
+            <!-- Car Image -->
+            <div class="col-span-1 flex items-center">
+                <img src="https://placehold.co/150x100" alt="Car Image" class="w-24 h-16">
+            </div>
+
+            <!-- Car Name and Type -->
+            <div class="col-span-1">
+                <p class="text-3xl font-semibold">Hyundai Creta</p>
+                <p class="text-lg text-gray-400">Petrol | Manual</p>
+            </div>
+
+            <!-- Price -->
+            <div class="col-span-1 text-center">
+                <p class="text-2xl font-semibold">₹17,00,000</p>
+                <p class="text-lg text-gray-400">Ex-showroom Price</p>
+            </div>
+
+            <!-- Mileage (Missing Data) -->
+            <div class="col-span-1 text-center">
+                <p class="text-2xl font-semibold">N/A</p>
+                <p class="text-lg text-gray-400">Mileage</p> <!-- Placeholder text for missing data -->
+            </div>
+
+            <!-- Arrow -->
+            <div class="col-span-1 flex justify-end">
+                <i id="arrow2" class="fas fa-chevron-down text-3xl"></i>
+            </div>
+        </div>
+
+        <!-- Dropdown Content for Second Car -->
+        <div id="dropdown2" class="hidden bg-gray-700 mt-4 rounded-lg p-6">
+            <p class="text-lg font-semibold">Additional Specifications</p>
+            <ul class="mt-2 text-gray-300">
+                <li><span class="font-bold">Horsepower:</span> 140 hp</li>
+                <li><span class="font-bold">Top Speed:</span> 175 km/h</li>
+                <li><span class="font-bold">Fuel Tank Capacity:</span> 50 liters</li>
+                <li><span class="font-bold">Safety Rating:</span> 4 stars</li>
+                <li><span class="font-bold">Boot Space:</span> 433 liters</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown1() {
+            const dropdown = document.getElementById('dropdown1');
+            const arrow = document.getElementById('arrow1');
+
+            dropdown.classList.toggle('hidden');
+            arrow.classList.toggle('fa-chevron-up');
+            arrow.classList.toggle('fa-chevron-down');
+        }
+
+        function toggleDropdown2() {
+            const dropdown = document.getElementById('dropdown2');
+            const arrow = document.getElementById('arrow2');
+
+            dropdown.classList.toggle('hidden');
+            arrow.classList.toggle('fa-chevron-up');
+            arrow.classList.toggle('fa-chevron-down');
+        }
+    </script>
+</body>
+</html>
